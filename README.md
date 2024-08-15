@@ -11,6 +11,7 @@ This project focuses on predicting the prices of the S&P 500 using different mac
     - [Model 2](#model-2)
     - [Model 3 (Final Model)](#model-3-final-model)
   - [Installation](#installation)
+  - [Usage](#usage)
 
 ## <span style="color:#2ecc71">Project Overview</span>
 The goal of this project is to predict the prices of the S&P 500 index. We experimented with different features and models to determine the best approach for accurate predictions. After thorough analysis, we finalized the model that performed the best in terms of prediction accuracy.
@@ -43,7 +44,7 @@ pip install -r requirements.txt
 ```
 
 
-<span style="color:#8e44ad">Usage</span>
+## <span style="color:#8e44ad">Usage</span>
 Clone the repository and open the notebooks using Jupyter:
 
 
