@@ -48,6 +48,7 @@ pip install -r requirements.txt
 ## <span style="color:#8e44ad">Usage</span>
 Clone the repository and open the notebooks using Jupyter:
 
+
 ```bash
 git clone https://github.com/your-repository/price-prediction-sp500.git
 cd price-prediction-sp500
@@ -57,7 +58,7 @@ jupyter notebook
 Run the notebooks in sequence, starting with Model 1, then Model 2, and finally Model 3, to understand the progression of the models and the final results.
 
 
-## <span style="color:#d35400">Team</span>
+## <span style="color:#27ae60">Team</span>
 This project was developed by:
 
 @QianqianM
