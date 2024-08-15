@@ -11,6 +11,7 @@ This project focuses on predicting the prices of the S&P 500 using different mac
 - [Price Prediction of S\&P 500](#price-prediction-of-sp-500)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
+  - [Data](#data)
   - [Notebooks](#notebooks)
     - [Model 1](#model-1)
     - [Model 2](#model-2)
@@ -22,11 +23,37 @@ This project focuses on predicting the prices of the S&P 500 using different mac
 ## <span style="color:#2ecc71">Project Overview</span>
 The goal of this project is to predict the prices of the S&P 500 index. We experimented with different features and models to determine the best approach for accurate predictions. After thorough analysis, we finalized the model that performed the best in terms of prediction accuracy.
 
+## <span style="color:#e67e22">Data</span>
+The data used for this project consists of historical price information for the S&P 500 index. The dataset includes features such as:
+- **Date**: The date of the recorded data.
+- **Open**: The price of the S&P 500 at market open.
+- **High**: The highest price of the S&P 500 on that day.
+- **Low**: The lowest price of the S&P 500 on that day.
+- **Close**: The closing price of the S&P 500.
+- **Adj Close**: The adjusted closing price of the S&P 500, adjusted for dividends and splits.
+- **Volume**: The number of shares traded.
+
+The data was preprocessed to handle missing values and create new features that could potentially improve the prediction model. The data analysis and preprocessing steps are detailed in the notebooks.
+
+Snippet of code of how the data is loaded in the notebooks:
+
+```python
+start = '2000-01-01'
+end = datetime(2024, 8, 7, 11, 21, 24, 633194)
+
+sp500_data = yf.download('^GSPC', start='2000-03-14', end='2024-01-01')
+sp500 = sp500_data.dropna()
+print(sp500.head(3))
+```
+
+For more details on the data collection and preprocessing, refer to the notebooks.
+
 ## <span style="color:#9b59b6">Notebooks</span>
 
 ### <span style="color:#e74c3c">Model 1</span>
 - **Description**: This notebook focuses on using the 'Adj Close' feature for prediction.
 - **Number of Code Cells**: 13
+
 ```python
 # Example of model training in Model 1 using 'Adj Close' feature
 from sklearn.linear_model import LinearRegression
