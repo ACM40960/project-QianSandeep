@@ -1,14 +1,14 @@
-# <span style="color:#2c3e50">Price Prediction of S&P 500</span>
+# <span style="color:#2c3e50"> LSTM Price Movement Predictions For Trading Algorithms</span>
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-SciKit%20Learn-yellow.svg)
 ![Status](https://img.shields.io/badge/status-Completed-success.svg)
 
-This project focuses on predicting the prices of the S&P 500 using different machine learning models. We experimented with three different models, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which also includes detailed data analysis.
+Our goal is to predict the daily return, we want to capture the trend and help individuals to make long term investments. This project further focuses on predicting the prices of the S&P 500 using different machine learning models. We experimented with multiple models further reduced to 3 different models, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which also includes detailed data analysis.
 
 ## <span style="color:#3498db">Table of Contents</span>
-- [Price Prediction of S\&P 500](#price-prediction-of-sp-500)
+- [ LSTM Price Movement Predictions For Trading Algorithms](#-lstm-price-movement-predictions-for-tradingalgorithms)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
   - [Data](#data)
@@ -105,7 +105,7 @@ print(f'R^2 Score: {r2_score}')
 # Example of hyperparameter tuning and final model training in Model 3
 from sklearn.model_selection import GridSearchCV
  
- 
+
 # Defining parameter grid for GridSearchCV
 param_grid = {
     'n_estimators': [50, 100, 200],
