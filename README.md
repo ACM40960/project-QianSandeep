@@ -1,4 +1,9 @@
 # <span style="color:#2c3e50">Price Prediction of S&P 500</span>
+![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-SciKit%20Learn-yellow.svg)
+![Status](https://img.shields.io/badge/status-Completed-success.svg)
 
 This project focuses on predicting the prices of the S&P 500 using different machine learning models. We experimented with three different models, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which also includes detailed data analysis.
 
