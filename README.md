@@ -104,7 +104,8 @@ print(f'R^2 Score: {r2_score}')
 ```python
 # Example of hyperparameter tuning and final model training in Model 3
 from sklearn.model_selection import GridSearchCV
-
+ 
+ 
 # Defining parameter grid for GridSearchCV
 param_grid = {
     'n_estimators': [50, 100, 200],
