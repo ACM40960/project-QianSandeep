@@ -12,6 +12,7 @@ This project focuses on predicting the prices of the S&P 500 using different mac
     - [Model 3 (Final Model)](#model-3-final-model)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Team](#team)
 
 ## <span style="color:#2ecc71">Project Overview</span>
 The goal of this project is to predict the prices of the S&P 500 index. We experimented with different features and models to determine the best approach for accurate predictions. After thorough analysis, we finalized the model that performed the best in terms of prediction accuracy.
@@ -47,17 +48,18 @@ pip install -r requirements.txt
 ## <span style="color:#8e44ad">Usage</span>
 Clone the repository and open the notebooks using Jupyter:
 
-
+```bash
 git clone https://github.com/your-repository/price-prediction-sp500.git
 cd price-prediction-sp500
 jupyter notebook
+```
 
 Run the notebooks in sequence, starting with Model 1, then Model 2, and finally Model 3, to understand the progression of the models and the final results.
 
 
-<span style="color:#d35400">Team</span>
+## <span style="color:#d35400">Team</span>
 This project was developed by:
 
-QianQian Meng
-Sandeep Jabez
+@QianqianM
+@SandeepJabez
 
