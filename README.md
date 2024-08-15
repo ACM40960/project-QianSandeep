@@ -95,7 +95,7 @@ r2_score = model.score(X_test, y_test)
 print(f'R^2 Score: {r2_score}')
 ```
 
-[View Model 2 Notebook](./model2.ipynb)
+[View Model 2 Notebook](./Project/Final%20folder/model2.ipynb)
 
 ### <span style="color:#2980b9">Model 3 (Final Model)</span>
 - **Description**: This is our final model, which includes comprehensive data analysis and the finalized prediction model.
@@ -124,7 +124,7 @@ final_model = RandomForestRegressor(**grid_search.best_params_)
 final_model.fit(X_train, y_train)
 ```
 
-[View Model 3 Notebook](./model3.ipynb)
+[View Model 3 Notebook](./Project/Final%20folder/model3.ipynb)
 
 ## <span style="color:#27ae60">Installation</span>
 To run the notebooks, you need to have Python and Jupyter installed. Additionally, install the required dependencies by running:
