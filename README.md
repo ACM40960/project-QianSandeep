@@ -41,7 +41,7 @@ To run the notebooks, you need to have Python and Jupyter installed. Additionall
 ```bash
 pip install -r requirements.txt
 
-
+```
 
 
 Usage
