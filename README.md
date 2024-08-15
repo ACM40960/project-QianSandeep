@@ -72,7 +72,7 @@ model.fit(X_train, y_train)
 # Making predictions
 y_pred = model.predict(X_test)
 ```
-[View Model 1 Notebook](.Project/Final folder/model1.ipynb)
+[View Model 1 Notebook](./Project/Final%20folder/model1.ipynb)
 
 ### <span style="color:#f39c12">Model 2</span>
 - **Description**: This notebook explores why predicting the 'Adj Close' price may not be the best approach.
