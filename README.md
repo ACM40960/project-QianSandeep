@@ -27,18 +27,75 @@ The goal of this project is to predict the prices of the S&P 500 index. We exper
 ### <span style="color:#e74c3c">Model 1</span>
 - **Description**: This notebook focuses on using the 'Adj Close' feature for prediction.
 - **Number of Code Cells**: 13
+```python
+# Example of model training in Model 1 using 'Adj Close' feature
+from sklearn.linear_model import LinearRegression
 
+# Selecting feature and target
+X = df[['Adj Close']].values
+y = df['Price'].values
+
+# Splitting the dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Training the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Making predictions
+y_pred = model.predict(X_test)
+```
 [View Model 1 Notebook](./model1.ipynb)
 
 ### <span style="color:#f39c12">Model 2</span>
 - **Description**: This notebook explores why predicting the 'Adj Close' price may not be the best approach.
 - **Number of Code Cells**: 15
 
+```python
+# Example of feature engineering in Model 2
+df['Price_Diff'] = df['Price'].diff()
+
+# Selecting new features
+X = df[['Volume', 'Price_Diff']].fillna(0).values
+y = df['Price'].values
+
+# Training the model with new features
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
+
+# Evaluating the model
+r2_score = model.score(X_test, y_test)
+print(f'R^2 Score: {r2_score}')
+```
+
 [View Model 2 Notebook](./model2.ipynb)
 
 ### <span style="color:#2980b9">Model 3 (Final Model)</span>
 - **Description**: This is our final model, which includes comprehensive data analysis and the finalized prediction model.
 - **Number of Code Cells**: 29
+
+```python
+# Example of hyperparameter tuning and final model training in Model 3
+from sklearn.model_selection import GridSearchCV
+
+# Defining parameter grid for GridSearchCV
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5, 10]
+}
+
+# Setting up the GridSearch with RandomForest
+grid_search = GridSearchCV(estimator=RandomForestRegressor(), param_grid=param_grid, cv=3, n_jobs=-1, verbose=2)
+grid_search.fit(X_train, y_train)
+
+# Best parameters from GridSearch
+print(f'Best Parameters: {grid_search.best_params_}')
+
+# Training final model with best parameters
+final_model = RandomForestRegressor(**grid_search.best_params_)
+final_model.fit(X_train, y_train)
+```
 
 [View Model 3 Notebook](./model3.ipynb)
 
