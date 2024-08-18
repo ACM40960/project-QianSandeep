@@ -5,7 +5,7 @@
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-SciKit%20Learn-yellow.svg)
 ![Status](https://img.shields.io/badge/status-Completed-success.svg)
 
-Our goal is to predict the daily return, we want to capture the trend and help individuals to make long term investments. This project further focuses on predicting the prices of the S&P 500 using different machine learning models. We experimented with multiple models further reduced to 3 different models, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which also includes detailed data analysis.
+Our aim is to predict the daily return, we want to capture the trend and help individuals to make long term investments. This project further focuses on predicting the prices of the S&P 500 using different machine learning models. We experimented with multiple models further reduced to 3 different models, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which also includes detailed data analysis.
 
 ## <span style="color:#3498db">Table of Contents</span>
 - [ LSTM Price Movement Predictions For Trading Algorithms](#-lstm-price-movement-predictions-for-tradingalgorithms)
@@ -21,7 +21,7 @@ Our goal is to predict the daily return, we want to capture the trend and help i
   - [Team](#team)
 
 ## <span style="color:#2ecc71">Project Overview</span>
-The goal of this project is to predict the prices of the S&P 500 index. We experimented with different features and models to determine the best approach for accurate predictions. After thorough analysis, we finalized the model that performed the best in terms of prediction accuracy.
+The goal of this project is to predict the prices of the S&P 500 index. We experimented with different features and models to determine the best approach for accurate predictions. After thorough analysis, we finalized the model that performed the best in terms of predictions.
 
 ## <span style="color:#e67e22">Data</span>
 The data used for this project consists of historical price information for the S&P 500 index. The dataset includes features such as:
@@ -124,6 +124,10 @@ print(f'Best Parameters: {grid_search.best_params_}')
 final_model = RandomForestRegressor(**grid_search.best_params_)
 final_model.fit(X_train, y_train)
 ```
+
+Snippet of model evaluation in Model 3:
+
+![alt text](image.png)
 
 [View Model 3 Notebook](./Project/Final%20folder/model3.ipynb)
 
