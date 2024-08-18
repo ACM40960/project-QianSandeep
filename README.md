@@ -10,7 +10,6 @@ Our aim is to predict the daily return, we want to capture the trend and help in
 ## <span style="color:#3498db">Table of Contents</span>
 - [ LSTM Price Movement Predictions For Trading Algorithms](#-lstm-price-movement-predictions-for-tradingalgorithms)
   - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
   - [Data](#data)
   - [Notebooks](#notebooks)
     - [Model 1](#model-1)
@@ -20,8 +19,8 @@ Our aim is to predict the daily return, we want to capture the trend and help in
   - [Usage](#usage)
   - [Team](#team)
 
-## <span style="color:#2ecc71">Project Overview</span>
-The goal of this project is to predict the prices of the S&P 500 index. We experimented with different features and models to determine the best approach for accurate predictions. After thorough analysis, we finalized the model that performed the best in terms of predictions.
+<span style="color:#2ecc71">Project Overview</span>
+The goal of this project is to predict the prices of the S&P 500 index. We explored various features and models to identify the most effective approach for accurate predictions. Throughout our analysis, we ensured that our models were unbiased, with predictions closely aligned with real values. Among the models tested, Linear Regression on Principal Components showed strong performance. However, recognizing the presence of intricate temporal patterns that simpler models couldn't capture, we ultimately chose a more advanced method, LSTM, to effectively model the data.
 
 ## <span style="color:#e67e22">Data</span>
 The data used for this project consists of historical price information for the S&P 500 index. The dataset includes features such as:
@@ -55,22 +54,16 @@ For more details on the data collection and preprocessing, refer to the notebook
 - **Number of Code Cells**: 13
 
 ```python
-# Example of model training in Model 1 using 'Adj Close' feature
-from sklearn.linear_model import LinearRegression
+model = Sequential()
+model.add(LSTM(units=50, return_sequences=True, input_shape=(x_train.shape[1], 1)))
+model.add(LSTM(units=50, return_sequences=False))
+# model.add(Dense(units=25))
+model.add(Dense(units=1))
 
-# Selecting feature and target
-X = df[['Adj Close']].values
-y = df['Price'].values
+# Compile the model
+model.compile(optimizer='adam', loss='mean_squared_error')
 
-# Splitting the dataset
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Training the model
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Making predictions
-y_pred = model.predict(X_test)
+history=model.fit(x_train,y_train,epochs=2,batch_size=2,validation_split=0.2)
 ```
 [View Model 1 Notebook](./Project/Final%20folder/model1.ipynb)
 
