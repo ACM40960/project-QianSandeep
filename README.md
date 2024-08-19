@@ -15,7 +15,6 @@ Our aim is to predict the daily return, we want to capture the trend and help in
     - [Model 1](#model-1)
     - [Model 2](#model-2)
     - [Model 3 (Final Model)](#model-3-final-model)
-  - [Installation](#installation)
   - [Usage](#usage)
   - [Team](#team)
 
@@ -128,21 +127,14 @@ Snippet of model evaluation in Model 3:
 
 [View Model 3 Notebook](./Project/Final%20folder/model3.ipynb)
 
-## <span style="color:#27ae60">Installation</span>
-To run the notebooks, you need to have Python and Jupyter installed. Additionally, install the required dependencies by running:
-
-```bash
-pip install -r requirements.txt
-```
-
 
 ## <span style="color:#8e44ad">Usage</span>
 Clone the repository and open the notebooks using Jupyter:
 
 
 ```bash
-git clone https://github.com/your-repository/price-prediction-sp500.git
-cd price-prediction-sp500
+git clone https://github.com/ACM40960/project-QianSandeep.git
+cd project-QianSandeep
 jupyter notebook
 ```
 
