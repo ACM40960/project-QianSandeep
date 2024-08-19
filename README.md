@@ -5,7 +5,7 @@
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-SciKit%20Learn-yellow.svg)
 ![Status](https://img.shields.io/badge/status-Completed-success.svg)
 
-Our aim is to predict the daily return, we want to capture the trend and help individuals to make long term investments. This project further focuses on predicting the prices of the S&P 500 using different machine learning models. We experimented with multiple models further reduced to 3 different models, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which also includes detailed data analysis.
+Our aim is to predict daily returns to capture trends and assist individuals in making long-term investments. We experimented with multiple models and ultimately selected three, each documented in separate Jupyter notebooks. The final model is presented in Model 3, which includes detailed data analysis.
 
 ## <span style="color:#3498db">Table of Contents</span>
 - [ LSTM Price Movement Predictions For Trading Algorithms](#-lstm-price-movement-predictions-for-tradingalgorithms)
