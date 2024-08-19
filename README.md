@@ -94,6 +94,9 @@ print(f'R^2 Score: {r2_score}')
 - **Description**: This is our final model, which includes comprehensive data analysis and the finalized prediction model.
 - **Number of Code Cells**: 29
 
+Architecture of the final model in Model 3:
+<!-- add image.png  -->
+![alt text](image.png)
 ```python
 # Example of hyperparameter tuning and final model training in Model 3
 from sklearn.model_selection import GridSearchCV
