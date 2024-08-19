@@ -39,7 +39,7 @@ Snippet of code of how the data is loaded in the notebooks:
 start = '2000-01-01'
 end = datetime(2024, 8, 7, 11, 21, 24, 633194)
 
-sp500_data = yf.download('^GSPC', start='2000-03-14', end='2024-01-01')
+sp500_data = yf.download('^GSPC', start=start, end=end)
 sp500 = sp500_data.dropna()
 print(sp500.head(3))
 ```
@@ -56,7 +56,6 @@ For more details on the data collection and preprocessing, refer to the notebook
 model = Sequential()
 model.add(LSTM(units=50, return_sequences=True, input_shape=(x_train.shape[1], 1)))
 model.add(LSTM(units=50, return_sequences=False))
-# model.add(Dense(units=25))
 model.add(Dense(units=1))
 
 # Compile the model
