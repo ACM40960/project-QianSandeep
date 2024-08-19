@@ -70,20 +70,16 @@ history=model.fit(x_train,y_train,epochs=2,batch_size=2,validation_split=0.2)
 - **Number of Code Cells**: 15
 
 ```python
-# Example of feature engineering in Model 2
-df['Price_Diff'] = df['Price'].diff()
+# Code snippet of model 
+model = Sequential()
+model.add(LSTM(units=150, input_shape=(X_train.shape[1], X_train.shape[2])))
+model.add(Dense(1))
+model.add(Activation('linear', name='output'))
 
-# Selecting new features
-X = df[['Volume', 'Price_Diff']].fillna(0).values
-y = df['Price'].values
+adam = optimizers.Adam()
+model.compile(optimizer='adam', loss='mse', metrics=[tf.keras.metrics.RootMeanSquaredError()])
 
-# Training the model with new features
-model = RandomForestRegressor()
-model.fit(X_train, y_train)
-
-# Evaluating the model
-r2_score = model.score(X_test, y_test)
-print(f'R^2 Score: {r2_score}')
+history = model.fit(x=X_train, y=y_train, epochs=30, batch_size=15, shuffle=True, validation_split=0.1)
 ```
 
 [View Model 2 Notebook](./Project/Final%20folder/model2.ipynb)
@@ -97,27 +93,30 @@ Architecture of the final model in Model 3:
 ![alt text](Figure_1.png)
 
 ```python
-# Example of hyperparameter tuning and final model training in Model 3
-from sklearn.model_selection import GridSearchCV
- 
+# Code snippet of final model
+model = Sequential([
+    LSTM(units=64, return_sequences=True, input_shape=(X_train.shape[1], X_train.shape[2])),
+    Dropout(0.3),
+    LSTM(units=45),
+    Dropout(0.2),
+    Dense(1)
+])
 
-# Defining parameter grid for GridSearchCV
-param_grid = {
-    'n_estimators': [50, 100, 200],
-    'max_depth': [None, 10, 20],
-    'min_samples_split': [2, 5, 10]
-}
 
-# Setting up the GridSearch with RandomForest
-grid_search = GridSearchCV(estimator=RandomForestRegressor(), param_grid=param_grid, cv=3, n_jobs=-1, verbose=2)
-grid_search.fit(X_train, y_train)
+# Compile the model
+model.compile(optimizer=Adam(learning_rate=0.001), loss='mse', 
+              metrics=[tf.keras.metrics.RootMeanSquaredError(), tf.keras.metrics.MeanAbsoluteError()])
 
-# Best parameters from GridSearch
-print(f'Best Parameters: {grid_search.best_params_}')
+# Callbacks for early stopping, model checkpointing, and learning rate reduction
+es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=5, restore_best_weights=True)
+model_checkpoint = ModelCheckpoint('best_model.keras', save_best_only=True, monitor='val_loss', mode='min')
+reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=3, min_lr=0.00001)
 
-# Training final model with best parameters
-final_model = RandomForestRegressor(**grid_search.best_params_)
-final_model.fit(X_train, y_train)
+# Fit the model with callbacks
+history = model.fit(X_train, y_train, epochs=40, batch_size=64, 
+                    validation_split=0.2,
+                    callbacks=[es, model_checkpoint, reduce_lr])
+
 ```
 
 Snippet of model evaluation in Model 3:
