@@ -63,7 +63,7 @@ model.compile(optimizer='adam', loss='mean_squared_error')
 
 history=model.fit(x_train,y_train,epochs=2,batch_size=2,validation_split=0.2)
 ```
-[View Model 1 Notebook](./Project/Final%20folder/model1.ipynb)
+[View Model 1 Notebook](./Project/Final%20folder/Model%201.ipynb)
 
 ### <span style="color:#f39c12">Model 2</span>
 - **Description**: This notebook explores why predicting the 'Adj Close' price may not be the best approach.
@@ -82,7 +82,7 @@ model.compile(optimizer='adam', loss='mse', metrics=[tf.keras.metrics.RootMeanSq
 history = model.fit(x=X_train, y=y_train, epochs=30, batch_size=15, shuffle=True, validation_split=0.1)
 ```
 
-[View Model 2 Notebook](./Project/Final%20folder/model2.ipynb)
+[View Model 2 Notebook](./Project/Final%20folder/Model%202.ipynb)
 
 ### <span style="color:#2980b9">Model 3 (Final Model)</span>
 - **Description**: This is our final model, which includes comprehensive data analysis and the finalized prediction model.
@@ -123,7 +123,7 @@ Snippet of model evaluation in Model 3:
 
 ![alt text](image.png)
 
-[View Model 3 Notebook](./Project/Final%20folder/model3.ipynb)
+[View Model 3 Notebook](./Project/Final%20folder/Model%203.ipynb)
 
 
 ## <span style="color:#8e44ad">Usage</span>
