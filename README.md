@@ -44,7 +44,7 @@ sp500 = sp500_data.dropna()
 print(sp500.head(3))
 ```
 
-For more details on the data collection and preprocessing, refer to the notebooks.
+For more details on the data collection and preprocessing, refer to the notebook for Model 3.
 
 ## <span style="color:#9b59b6">Notebooks</span>
 
